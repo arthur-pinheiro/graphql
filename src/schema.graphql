@@ -1,0 +1,17 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+}
+
+# all elements in array should have User structure because of !
+type Query {
+    users: [User!]!
+    # may return null
+    user(id: ID!): User
+}
+
+type Mutation {
+    # may return null
+    createUser(name: String!, email: String!): User
+}
